@@ -599,6 +599,7 @@ body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-i
 
 .gal__video{ margin:var(--space-3) 0 0; }
 .gal__video video{ display:block; width:100%; height:auto; aspect-ratio:9 / 16; max-height:calc(var(--measure) + var(--space-8)); object-fit:cover; border-radius:var(--radius-md); background:var(--color-bg); }
+.gal__video--land video{ aspect-ratio:4 / 3; max-height:none; object-fit:contain; }
 .gal__video figcaption{ margin-top:var(--space-2); font-size:var(--text-1); color:var(--color-muted); }
 /* ===== SIZE GUIDE ===== */
 .sg-head{ background:var(--color-surface); border-bottom:var(--border) solid var(--color-line); padding-block:var(--space-5) var(--space-6); padding-inline:var(--gutter-l) var(--gutter-r); }
