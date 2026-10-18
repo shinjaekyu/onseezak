@@ -126,25 +126,14 @@ var p=location.pathname.replace(/index\.html$/,'');h.querySelectorAll('.nav__lin
 <section class="fs-way" aria-labelledby="way-title">
   <div class="fs-way__inner">
     <div class="fs-way__map store__map">
-      <svg viewBox="0 0 520 320" role="img" aria-labelledby="fsmap-title">
-        <title id="fsmap-title">약도: 도산대로에서 도산대로27길로 들어와 37번 건물 3층</title>
-        <path d="M0 250 H520" stroke="currentColor" stroke-width="22" stroke-opacity=".12" fill="none"/>
-        <path d="M0 250 H520" stroke="currentColor" stroke-width="2" stroke-dasharray="10 10" fill="none" stroke-opacity=".5"/>
-        <path d="M300 250 V40" stroke="currentColor" stroke-width="16" stroke-opacity=".12" fill="none"/>
-        <text x="24" y="292" font-size="14" font-weight="600" fill="currentColor">도산대로</text>
-        <text x="314" y="150" font-size="13" fill="currentColor" fill-opacity=".8">도산대로27길</text>
-        <rect x="40" y="60" width="200" height="150" rx="6" fill="currentColor" fill-opacity=".05"/>
-        <rect x="360" y="60" width="130" height="150" rx="6" fill="currentColor" fill-opacity=".05"/>
-        <rect x="222" y="86" width="56" height="60" rx="4" fill="var(--color-brand)"/>
-        <text x="250" y="124" font-size="14" font-weight="700" text-anchor="middle" fill="var(--color-bg)">3F</text>
-        <path d="M250 50c-13 0-22 9-22 21 0 15 22 36 22 36s22-21 22-36c0-12-9-21-22-21z" fill="var(--color-accent)"/>
-        <circle cx="250" cy="71" r="7" fill="var(--color-bg)"/>
-        <text x="250" y="170" font-size="13" font-weight="600" text-anchor="middle" fill="currentColor">오늘시작 피팅 매장 · 37</text>
-      </svg>
-      <p class="store__mapcap">약도는 실제 축척과 다릅니다. 정확한 위치는 지도 앱에서 확인하세요.</p>
+      <div class="fs-way__embed">
+        <iframe title="오늘시작 피팅 매장 위치 지도 (서울 강남구 도산대로27길 37)" src="https://www.google.com/maps?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C+%EA%B0%95%EB%82%A8%EA%B5%AC+%EB%8F%84%EC%82%B0%EB%8C%80%EB%A1%9C27%EA%B8%B8+37&z=17&hl=ko&output=embed" width="600" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      <p class="store__mapcap">지도를 움직여 주변을 볼 수 있습니다. 길찾기는 아래 버튼으로 익숙한 지도 앱을 여세요.</p>
       <div class="store__maplinks">
-        <a class="btn btn--secondary btn--sm" href="https://map.kakao.com/link/search/서울 강남구 도산대로27길 37" target="_blank" rel="noopener">카카오맵에서 보기</a>
-        <a class="btn btn--secondary btn--sm" href="https://map.naver.com/p/search/서울 강남구 도산대로27길 37" target="_blank" rel="noopener">네이버지도에서 보기</a>
+        <a class="btn btn--secondary btn--sm" href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%8F%84%EC%82%B0%EB%8C%80%EB%A1%9C27%EA%B8%B8%2037" target="_blank" rel="noopener">네이버지도 길찾기</a>
+        <a class="btn btn--secondary btn--sm" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%8F%84%EC%82%B0%EB%8C%80%EB%A1%9C27%EA%B8%B8%2037" target="_blank" rel="noopener">카카오맵 길찾기</a>
+        <a class="btn btn--secondary btn--sm" href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C+%EA%B0%95%EB%82%A8%EA%B5%AC+%EB%8F%84%EC%82%B0%EB%8C%80%EB%A1%9C27%EA%B8%B8+37" target="_blank" rel="noopener">구글지도</a>
       </div>
     </div>
     <div class="fs-way__copy">

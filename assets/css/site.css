@@ -704,12 +704,14 @@ body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-i
 .fs-photos{ background:var(--color-bg); padding-block:var(--space-7); padding-inline:var(--gutter-l) var(--gutter-r); }
 .fs-photos__grid{ margin:0; padding:0; list-style:none; display:grid; gap:var(--space-3); }
 .fs-photos__grid li{ border-radius:var(--radius-md); overflow:hidden; background:var(--color-surface); }
-.fs-photos__grid img{ display:block; width:100%; height:100%; aspect-ratio:3 / 2; object-fit:cover; }
+.fs-photos__grid img{ display:block; width:100%; height:auto; aspect-ratio:3 / 4; object-fit:cover; }
 
 .fs-way{ background:var(--color-surface); padding-block:var(--space-7); padding-inline:var(--gutter-l) var(--gutter-r); }
 .fs-way__inner{ display:grid; gap:var(--space-6); align-items:start; }
 .fs-way__map{ background:var(--color-bg); border:var(--border) solid var(--color-line); border-radius:var(--radius-md); padding:var(--space-4); color:var(--color-text); display:grid; gap:var(--space-3); }
 .fs-way__map svg{ width:100%; height:auto; }
+.fs-way__embed{ border-radius:var(--radius-sm); overflow:hidden; aspect-ratio:4 / 3; background:var(--color-surface); }
+.fs-way__embed iframe{ display:block; width:100%; height:100%; border:0; }
 .fs-way__map .store__mapcap{ margin:0; font-size:var(--text-1); color:var(--color-muted); }
 .fs-way__map .store__maplinks{ display:flex; flex-wrap:wrap; gap:var(--space-2); }
 .fs-way__map .btn--secondary{ color:var(--color-brand); border-color:var(--color-brand); }
@@ -743,9 +745,7 @@ body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-i
 
 @media (min-width:720px){
   .fs-facts{ grid-template-columns:repeat(2,1fr); }
-  .fs-photos__grid{ grid-template-columns:2fr 1fr; grid-template-rows:1fr 1fr; }
-  .fs-photos__main{ grid-row:1 / span 2; }
-  .fs-photos__main img{ aspect-ratio:auto; }
+  .fs-photos__grid{ grid-template-columns:1fr 1fr; max-width:calc(var(--container) * 2 / 3); margin-inline:auto; }
 }
 @media (min-width:900px){
   .fs-facts{ grid-template-columns:repeat(4,1fr); }
