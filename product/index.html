@@ -215,11 +215,11 @@ var p=location.pathname.replace(/index\.html$/,'');h.querySelectorAll('.nav__lin
     <ol class="choose__steps">
       <li><div><b>수술 부위를 먼저 정합니다</b><p>복부만인지, 허벅지나 팔이 포함되는지에 따라 길이가 달라집니다. 두 부위 이상이면 보디수트형이 맞습니다.</p></div></li>
       <li><div><b>회복 단계를 확인합니다</b><p>수술 직후는 앞지퍼·후크형(1단계), 활동이 늘면 길이를 조정한 형태(2단계), 이후에는 데일리로 바꿉니다. 시기는 담당 의료진 안내를 따릅니다.</p></div></li>
-      <li><div><b>매장에서 치수를 재고 입어 봅니다</b><p>압박복은 평소 옷 사이즈와 다를 수 있습니다. 전화 예약 후 방문하면 두 사이즈를 비교해 입어 볼 수 있습니다.</p></div></li>
+      <li><div><b>매장에서 치수를 재고 입어 봅니다</b><p>압박복은 평소 옷 사이즈와 다를 수 있습니다. 전화 예약 후 방문하면 치수를 재고 전시 제품으로 피팅한 뒤 맞춤 제작합니다.</p></div></li>
     </ol>
     <div class="faqmini">
-      <details><summary>압박복은 몇 벌이 필요한가요?</summary><p>세탁해 번갈아 입으려면 2벌을 권합니다. 1벌로 시작하고 사이즈가 바뀌는 시기에 추가하는 분도 있습니다.</p></details>
-      <details><summary>온라인으로 사도 되나요?</summary><p>네이버 스마트스토어에서 구매할 수 있습니다. 다만 사이즈가 애매하면 매장에서 먼저 입어 보는 쪽이 교환 없이 끝납니다.</p></details>
+      <details><summary>압박복은 몇 벌이 필요한가요?</summary><p>세탁해 번갈아 입으려면 2벌을 권합니다. 1벌로 시작했다가 치수가 바뀌면 무료 수선으로 맞추고 한 벌 더 준비하는 분도 있습니다.</p></details>
+      <details><summary>온라인으로 사도 되나요?</summary><p>네이버 스마트스토어에서 구매할 수 있습니다. 다만 맞춤 제작 제품은 교환·반품이 어려우므로, 매장에서 먼저 피팅하는 것을 권합니다.</p></details>
       <details><summary>남성용도 있나요?</summary><p>상체형·전신형·가슴 부위 전용 등 5종이 있습니다. 위 필터에서 '남성'을 누르면 바로 볼 수 있습니다.</p></details>
       <a class="btn btn--secondary btn--sm" href="/faq/" style="justify-self:start">FAQ 전체 보기</a>
     </div>
@@ -232,7 +232,7 @@ function apply(f){var n=0;cards.forEach(function(c){var ok=f==='all'||(c.dataset
 chips.forEach(function(ch){ch.addEventListener('click',function(){chips.forEach(function(c){c.setAttribute('aria-pressed',c===ch?'true':'false');});apply(ch.dataset.filter);});});
 var h=location.hash.replace('#','');chips.forEach(function(ch){if(ch.dataset.filter===h){ch.click();}});})();
 </script>
-</main><!-- 섹션 7. 후기 — 광고 가능 여부 확인 전까지 hidden 유지. 공개할 때 <section …> 안의 hidden 한 단어만 삭제 -->
+</main>
 <section class="reviews" aria-labelledby="reviews-title" hidden>
   <div class="reviews__inner">
     <p class="reviews__eyebrow">REVIEW</p>
@@ -246,7 +246,7 @@ var h=location.hash.replace('#','');chips.forEach(function(ch){if(ch.dataset.fil
   </div>
 </section>
 
-<!-- 섹션 8. 푸터 — 메인 페이지 맨 아래 '사용자 정의 HTML' 블록. 테마 기본 푸터가 따로 보이면 외모 > 사용자 정의에서 테마 푸터를 숨긴다 -->
+
 <footer class="footer">
   <div class="footer__inner">
     <div class="footer__brand">
