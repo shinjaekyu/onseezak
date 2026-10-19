@@ -1060,7 +1060,7 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
   .products__grid{ grid-auto-columns:46%; }
   .pcard{ scroll-snap-align:start; }
   .timeline__note{ margin-top:var(--space-3); padding-top:0; border-top:none; font-size:var(--text-1); }
-  .products__sub{ display:none; }
+  .products__sub{ font-size:var(--text-2); }
   .products__head{ margin-bottom:var(--space-4); }
 
   /* 매장: 사진 가로형 */
