@@ -245,7 +245,7 @@ body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-i
 }
 @media (min-width:900px){
   .timeline{ padding-block:var(--space-8); padding-inline:var(--gutter-l-lg) var(--gutter-r-lg); }
-  .timeline__head{ display:grid; grid-template-columns:1fr 1fr; gap:var(--space-6); max-width:none; align-items:end; }
+  .timeline__head{ display:grid; grid-template-columns:1fr 1fr; gap:var(--space-2) var(--space-6); max-width:none; align-items:end; }
   .timeline__head .label{ grid-column:1 / -1; margin-bottom:0; }
   .timeline__title{ margin:0; }
   .timeline__steps{ gap:var(--space-5); }
