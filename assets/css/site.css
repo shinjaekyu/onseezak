@@ -56,6 +56,14 @@ a{color:var(--color-accent);}
 textarea.field__input{min-height:calc(var(--control-h) * 2.5);padding:var(--space-3);line-height:var(--leading-body);}
 
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* 카카오채널 QR — PC에서만 표시(모바일은 버튼으로 바로 연결) */
+.kqr{display:none;}
+@media (min-width:900px){
+.kqr{display:flex;align-items:center;gap:var(--space-3);margin:var(--space-4) 0 0;}
+.kqr img{display:block;width:calc(var(--space-8) + var(--space-4));height:auto;flex:none;}
+.kqr figcaption{font-size:var(--text-1);line-height:1.6;word-break:keep-all;opacity:.85;}
+.pt-cta .kqr{justify-content:center;text-align:left;}
+}
 summary{min-height:var(--control-h-sm);box-sizing:border-box;}
 @media (min-width:900px){:root{--text-1:13px;--text-2:16px;--text-3:17px;--text-4:21px;--text-5:26px;}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
