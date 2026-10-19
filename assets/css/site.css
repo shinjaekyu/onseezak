@@ -193,7 +193,7 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
   .hero__caption-link{ grid-column:2; }
 }
 /* ============================================================
-   섹션 3. 부위별 제품 4 — v2 (흰 바탕, 사진 타일만 웜그레이)
+   섹션 3. 대표 제품 4 (회복용 3 + 생활용 1) — v3 (흰 바탕, 사진 타일만 웜그레이)
    ============================================================ */
 .products{ background:var(--color-bg); padding-block:var(--space-7); padding-inline:var(--gutter-l) var(--gutter-r); }
 .products__inner{ max-width:var(--container); margin:0 auto; }
@@ -209,9 +209,9 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 .pcard__media{ position:relative; overflow:hidden; background:var(--color-surface); }
 .pcard__img{ display:block; width:100%; height:auto; aspect-ratio:3/4; object-fit:cover; object-position:50% 15%; transition:transform .3s; }
 .pcard__link:hover .pcard__img{ transform:scale(1.03); }
-.pcard__badge{ position:absolute; top:var(--space-3); left:var(--space-3); }
+.pcard__badge{ position:absolute; bottom:var(--space-3); left:var(--space-3); }
 .pcard__part{ margin:var(--space-3) 0 var(--space-1); font-size:var(--text-1); font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent); }
-.pcard__name{ margin:0 0 var(--space-1); font-size:var(--text-3); font-weight:700; line-height:var(--leading-tight); }
+.pcard__name{ margin:var(--space-3) 0 var(--space-1); word-break:keep-all; font-size:var(--text-3); font-weight:700; line-height:var(--leading-tight); }
 .pcard__desc{ margin:0; font-size:var(--text-2); color:var(--color-muted); }
 @media (min-width:700px){ .products__grid{ grid-template-columns:repeat(4,1fr); gap:var(--space-4); } }
 @media (min-width:900px){ .products{ padding-block:var(--space-8); padding-inline:var(--gutter-l-lg) var(--gutter-r-lg); } }
