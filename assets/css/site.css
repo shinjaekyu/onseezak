@@ -1052,6 +1052,7 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
   /* 단계·제품: 옆으로 넘기는 카드 */
   .timeline, .products, .store, .guide{ padding-block:var(--space-6); }
   .timeline__head{ margin-bottom:var(--space-4); }
+  .br-pc{ display:none; }
   .swipe-hint{ display:block; margin:var(--space-3) 0 0; font-size:var(--text-1); font-weight:600; color:var(--color-accent); }
   .timeline__steps, .products__grid{ display:grid; grid-template-columns:none; grid-auto-flow:column; gap:var(--space-3);
     overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scrollbar-width:none;
