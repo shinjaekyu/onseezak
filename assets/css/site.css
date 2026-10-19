@@ -137,12 +137,12 @@ body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-i
 .nf__links{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:var(--space-2); }
 .nf__contact a{ color:var(--color-brand); }
 /* ============================================================
-   섹션 1. 히어로 — v2 에디토리얼 화이트
+   섹션 1. 히어로 — v2.1 (글 위 / 세트 룩북 띠 아래)
    토큰 외 값 사용 없음.
    ============================================================ */
-.hero{ background:var(--color-bg); padding-block:var(--space-6) 0; padding-inline:var(--gutter-l) var(--gutter-r); }
-.hero__inner{ max-width:var(--container); margin:0 auto; display:grid; grid-template-columns:1fr; gap:var(--space-5); align-items:end; }
-.hero__copy{ word-break:keep-all; overflow-wrap:anywhere; padding-bottom:var(--space-5); }
+.hero{ background:var(--color-bg); padding-block:var(--space-6) var(--space-7); padding-inline:var(--gutter-l) var(--gutter-r); }
+.hero__inner{ max-width:var(--container); margin:0 auto; display:grid; grid-template-columns:1fr; gap:var(--space-6); }
+.hero__copy{ word-break:keep-all; overflow-wrap:anywhere; }
 .hero__eyebrow{ margin-bottom:var(--space-4); }
 .hero__title{ margin:0 0 var(--space-4); font-size:var(--text-6); line-height:1.1; letter-spacing:-0.03em; color:var(--color-text); }
 .hero__lead{ margin:0 0 var(--space-5); font-size:var(--text-3); line-height:var(--leading-body); color:var(--color-muted); max-width:var(--measure); }
@@ -152,17 +152,26 @@ body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-i
 .hero__trust li{ display:flex; align-items:center; gap:var(--space-2); }
 .hero__trust li::before{ content:""; width:var(--space-1); height:var(--space-1); background:var(--color-muted); }
 
-/* 사진: 틀 없이, 바닥선에 맞춰 */
-.hero__media{ margin:0; background:var(--color-surface); }
-.hero__img{ display:block; width:100%; height:auto; aspect-ratio:4 / 5; object-fit:cover; object-position:50% 12%; }
-.hero__caption{ margin:0; padding:var(--space-2) 0 var(--space-3); font-size:var(--text-1); letter-spacing:.04em; color:var(--color-muted); }
+/* 세트 룩북: 모바일 2×2, 데스크톱 1×4 */
+.hero__media{ margin:0; }
+.hero__img{ display:block; width:100%; height:auto; background:var(--color-surface); }
+.hero__caption{ display:grid; gap:var(--space-1); margin:0; padding:var(--space-3) 0 0; font-size:var(--text-2); color:var(--color-muted); word-break:keep-all; max-width:var(--measure); }
+.hero__caption-name{ font-size:var(--text-1); font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent); }
+.hero__caption-desc{ margin:0; }
+.hero__caption-link{ font-weight:600; color:var(--color-text); text-decoration:none; border-bottom:var(--border) solid var(--color-line); padding-bottom:var(--space-1); justify-self:start; }
+.hero__caption-link:hover{ border-bottom-color:var(--color-text); }
+.hero__caption-link:focus-visible{ outline:none; box-shadow:var(--focus-ring); }
 
 @media (min-width:900px){
-  .hero{ padding-block:var(--space-8) 0; padding-inline:var(--gutter-l-lg) var(--gutter-r-lg); }
-  .hero__inner{ grid-template-columns:1.1fr 0.9fr; gap:var(--space-8); }
-  .hero__copy{ padding-bottom:var(--space-8); }
-  .hero__title{ font-size:var(--text-7); }
-  .hero__img{ aspect-ratio:3 / 4; }
+  .hero{ padding-block:var(--space-8) var(--space-8); padding-inline:var(--gutter-l-lg) var(--gutter-r-lg); }
+  .hero__inner{ gap:var(--space-7); }
+  .hero__copy{ display:grid; grid-template-columns:1.2fr 0.8fr; gap:var(--space-4) var(--space-7); align-items:end; }
+  .hero__copy > .hero__eyebrow{ grid-column:1 / -1; margin-bottom:0; }
+  .hero__side{ padding-bottom:var(--space-1); }
+  .hero__title{ font-size:var(--text-7); margin:0; }
+  .hero__lead{ margin:0 0 var(--space-4); }
+  .hero__actions{ margin:0 0 var(--space-3); }
+  .hero__caption{ grid-template-columns:auto 1fr auto; align-items:baseline; gap:var(--space-2) var(--space-4); max-width:none; }
 }
 /* ============================================================
    섹션 3. 부위별 제품 4 — v2 (흰 바탕, 사진 타일만 웜그레이)
