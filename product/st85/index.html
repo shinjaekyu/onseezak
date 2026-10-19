@@ -27,6 +27,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "name": "오늘시작", "alternateName": "오늘시작 압박복", "url": "https://onseezak.com/", "logo": "https://onseezak.com/assets/img/og-image.jpg", "sameAs": ["https://www.instagram.com/on_seezak/"], "contactPoint": {"@type": "ContactPoint", "telephone": "+82-2-6080-0252", "contactType": "customer service", "availableLanguage": "ko"}}, {"@context": "https://schema.org", "@type": "WebSite", "name": "오늘시작 압박복 공식 홈페이지", "url": "https://onseezak.com/", "inLanguage": "ko"}, {"@context": "https://schema.org", "@type": "WebPage", "name": "ST85 팔 전체·견갑 압박복", "url": "https://onseezak.com/product/st85/", "inLanguage": "ko", "dateModified": "2026-10-19", "isPartOf": {"@type": "WebSite", "name": "오늘시작 압박복 공식 홈페이지", "url": "https://onseezak.com/"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://onseezak.com/"}, {"@type": "ListItem", "position": 2, "name": "ST85 팔 전체·견갑 압박복", "item": "https://onseezak.com/product/st85/"}]}]</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-22MH4VWC1D"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-22MH4VWC1D');</script>
 </head>
 <body>
 <a class="sr-only" href="#main">본문으로 건너뛰기</a>
@@ -175,5 +177,19 @@ var p=location.pathname.replace(/index\.html$/,'');h.querySelectorAll('.nav__lin
   </div>
 </footer>
 <script>if('scrollRestoration' in history){history.scrollRestoration='manual';}window.addEventListener('pageshow',function(){if(!location.hash){var h=document.documentElement,b=h.style.scrollBehavior;h.style.scrollBehavior='auto';window.scrollTo(0,0);h.style.scrollBehavior=b;}});</script>
+<script>(function(){
+function ev(n,p){try{if(window.gtag)gtag('event',n,p||{});}catch(e){}}
+document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'',t=(a.textContent||'').trim().slice(0,40);
+ if(h.indexOf('tel:')===0)ev('click_call',{label:t});
+ else if(h.indexOf('sms:')===0)ev('click_sms',{label:t});
+ else if(h.indexOf('mailto:')===0)ev('click_email',{label:t});
+ else if(h.indexOf('pf.kakao.com')>-1)ev('click_kakao',{label:t});
+ else if(h.indexOf('smartstore.naver.com')>-1)ev('click_smartstore',{label:t});
+ else if(/map\.naver|map\.kakao|google\.com\/maps/.test(h))ev('click_map',{label:t});
+ else if(a.classList.contains('btn'))ev('click_cta',{label:t,link:h});
+},true);
+document.addEventListener('toggle',function(e){var d=e.target;if(d.tagName!=='DETAILS'||!d.open)return;var s=d.querySelector('summary');ev('faq_open',{question:(s?s.textContent:'').trim().slice(0,80),item:d.id||''});},true);
+var marks=[25,50,75,100],sent={};addEventListener('scroll',function(){var h=document.documentElement,p=Math.round((scrollY+innerHeight)/h.scrollHeight*100);marks.forEach(function(m){if(p>=m&&!sent[m]){sent[m]=1;ev('scroll_depth',{percent:m});}});},{passive:true});
+})();</script>
 </body>
 </html>

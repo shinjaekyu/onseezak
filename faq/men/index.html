@@ -27,6 +27,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "name": "오늘시작", "alternateName": "오늘시작 압박복", "url": "https://onseezak.com/", "logo": "https://onseezak.com/assets/img/og-image.jpg", "sameAs": ["https://www.instagram.com/on_seezak/"], "contactPoint": {"@type": "ContactPoint", "telephone": "+82-2-6080-0252", "contactType": "customer service", "availableLanguage": "ko"}}, {"@context": "https://schema.org", "@type": "WebSite", "name": "오늘시작 압박복 공식 홈페이지", "url": "https://onseezak.com/", "inLanguage": "ko"}, {"@context": "https://schema.org", "@type": "WebPage", "name": "압박복 FAQ · 남성 제품 (2문항)", "url": "https://onseezak.com/faq/men/", "inLanguage": "ko", "dateModified": "2026-10-19", "isPartOf": {"@type": "WebSite", "name": "오늘시작 압박복 공식 홈페이지", "url": "https://onseezak.com/"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://onseezak.com/"}, {"@type": "ListItem", "position": 2, "name": "압박복 FAQ · 남성 제품 (2문항)", "item": "https://onseezak.com/faq/men/"}]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "남성용 압박복은 어떻게 고르나요?", "acceptedAnswer": {"@type": "Answer", "text": "남성용은 가슴만 누르는 조끼형, 가슴과 복부를 함께 덮는 올인원, 복부 단품, 벨크로 압박 밴드로 나뉩니다. 전문의는 가슴을 전체적으로 고르게 눌러 주는 체형에 맞는 압박복을 고르라고 강조하고, 밴드만 오래 쓰면 가슴이 접히는 등 모양 만족도가 낮을 수 있다고 설명합니다. 가슴둘레와 허리둘레 중 무엇을 우선해 재는지는 확인된 출처가 없으므로 제품 사이즈표를 따르세요. 수술 부위가 가슴만인지 복부까지인지에 따라 종류를 고르고, 담당 의료진이 권한 형태가 있다면 그것을 우선합니다."}}, {"@type": "Question", "name": "여유증 수술 후에는 압박복을 얼마나 입나요? 밴드와 압박복은 어떻게 다른가요?", "acceptedAnswer": {"@type": "Answer", "text": "여유증 전문의는 수술 초반에는 압박 밴드를 쓰고 실밥 제거 즈음부터 압박복으로 바꾸길 권하며, 전체 기간은 최소 1~2개월, 흡입량이 많으면 더 길게 안내합니다. 유튜브 병원 영상에서는 첫 1개월 24시간, 이후 2~3개월은 잘 때만 입으라고 안내해 바디 지방흡입보다 긴 편입니다. 다른 병원은 2주 24시간 이상, 이후 12시간 이상으로 안내하기도 하므로 병원마다 1개월~4개월로 범위가 넓습니다. 밴드는 간편하지만 고르게 누르기 어렵고, 압박복은 번거롭지만 가슴 전체를 고르게 잡아 준다는 것이 전문의 설명이며, 전환 시점과 총 기간은 담당 의료진 안내를 우선합니다."}}]}]</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-22MH4VWC1D"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-22MH4VWC1D');</script>
 </head>
 <body>
 <a class="sr-only" href="#main">본문으로 건너뛰기</a>
@@ -170,5 +172,19 @@ var p=location.pathname.replace(/index\.html$/,'');h.querySelectorAll('.nav__lin
   </div>
 </footer>
 
+<script>(function(){
+function ev(n,p){try{if(window.gtag)gtag('event',n,p||{});}catch(e){}}
+document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'',t=(a.textContent||'').trim().slice(0,40);
+ if(h.indexOf('tel:')===0)ev('click_call',{label:t});
+ else if(h.indexOf('sms:')===0)ev('click_sms',{label:t});
+ else if(h.indexOf('mailto:')===0)ev('click_email',{label:t});
+ else if(h.indexOf('pf.kakao.com')>-1)ev('click_kakao',{label:t});
+ else if(h.indexOf('smartstore.naver.com')>-1)ev('click_smartstore',{label:t});
+ else if(/map\.naver|map\.kakao|google\.com\/maps/.test(h))ev('click_map',{label:t});
+ else if(a.classList.contains('btn'))ev('click_cta',{label:t,link:h});
+},true);
+document.addEventListener('toggle',function(e){var d=e.target;if(d.tagName!=='DETAILS'||!d.open)return;var s=d.querySelector('summary');ev('faq_open',{question:(s?s.textContent:'').trim().slice(0,80),item:d.id||''});},true);
+var marks=[25,50,75,100],sent={};addEventListener('scroll',function(){var h=document.documentElement,p=Math.round((scrollY+innerHeight)/h.scrollHeight*100);marks.forEach(function(m){if(p>=m&&!sent[m]){sent[m]=1;ev('scroll_depth',{percent:m});}});},{passive:true});
+})();</script>
 </body>
 </html>
