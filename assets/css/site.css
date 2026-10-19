@@ -257,15 +257,6 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 .step{ display:grid; grid-template-columns:var(--space-7) 1fr; gap:var(--space-3); align-content:start; padding-block:var(--space-4); border-bottom:var(--border) solid var(--color-line); }
 .step__dot{ align-self:start; font-size:var(--text-5); font-weight:300; letter-spacing:-0.02em; color:var(--color-text); line-height:1; }
 .step__body{ display:grid; gap:0; }
-.step__fig{ width:var(--space-8); height:var(--space-8); margin:0 0 var(--space-3); color:var(--color-text); }
-.step__fig svg{ display:block; width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
-.step__fig svg *{ vector-effect:non-scaling-stroke; }
-.step__fig .fx-a{ stroke:var(--color-accent); }
-@media (max-width:699px){
-  .step{ position:relative; }
-  .step__fig{ position:absolute; left:0; top:calc(var(--space-4) + var(--space-6)); width:var(--space-6); height:var(--space-6); margin:0; }
-  .step__fig svg{ stroke-width:1.5; }
-}
 .step__when{ margin:0 0 var(--space-1); font-size:var(--text-1); font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent); }
 .step__title{ margin:0 0 var(--space-2); font-size:var(--text-4); }
 .step__desc{ margin:0 0 var(--space-2); font-size:var(--text-2); color:var(--color-muted); word-break:keep-all; }
