@@ -246,19 +246,17 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
   .feature{ border-top:var(--border) solid var(--color-line); border-bottom:0; padding:var(--space-4) 0 var(--space-5); }
 }
 /* ============================================================
-   섹션 2. 회복 3단계 — v2 (히어로 바로 아래, 사진 3장 가로)
+   섹션 2. 진행 과정 — v3 (수술 전 → 당일 → 회복 중, 사진 없이 3칸)
    ============================================================ */
-.timeline{ background:var(--color-surface); padding-block:var(--space-7); padding-inline:var(--gutter-l) var(--gutter-r); }
+.timeline{ scroll-margin-top:calc(var(--control-h) + var(--space-3)); background:var(--color-surface); padding-block:var(--space-7); padding-inline:var(--gutter-l) var(--gutter-r); }
 .timeline__inner{ max-width:var(--container); margin:0 auto; }
 .timeline__head{ max-width:var(--measure); margin:0 0 var(--space-6); word-break:keep-all; }
 .timeline__title{ margin:0 0 var(--space-3); }
 .timeline__lead{ margin:0; color:var(--color-muted); }
-.timeline__steps{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr; gap:var(--space-6); }
-.step{ display:grid; gap:var(--space-3); align-content:start; }
+.timeline__steps{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr; gap:0; border-top:var(--border) solid var(--color-text); }
+.step{ display:grid; grid-template-columns:var(--space-7) 1fr; gap:var(--space-3); align-content:start; padding-block:var(--space-4); border-bottom:var(--border) solid var(--color-line); }
 .step__dot{ align-self:start; font-size:var(--text-5); font-weight:300; letter-spacing:-0.02em; color:var(--color-text); line-height:1; }
-.step__body{ display:grid; gap:var(--space-3); }
-.step__media{ background:transparent; line-height:0; }
-.step__img{ display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:50% 10%; }
+.step__body{ display:grid; gap:0; }
 .step__when{ margin:0 0 var(--space-1); font-size:var(--text-1); font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent); }
 .step__title{ margin:0 0 var(--space-2); font-size:var(--text-4); }
 .step__desc{ margin:0 0 var(--space-2); font-size:var(--text-2); color:var(--color-muted); word-break:keep-all; }
@@ -268,8 +266,9 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 .step__products a:focus-visible{ outline:none; box-shadow:var(--focus-ring); }
 .timeline__note{ margin:var(--space-6) 0 0; padding:var(--space-3) 0 0; border-top:var(--border) solid var(--color-line); font-size:var(--text-2); color:var(--color-muted); word-break:keep-all; max-width:var(--measure); }
 @media (min-width:700px){
-  .timeline__steps{ grid-template-columns:repeat(3,1fr); gap:var(--space-4); }
-  .step__img{ aspect-ratio:3/4; }
+  .timeline__steps{ grid-template-columns:repeat(3,1fr); gap:var(--space-5); border-top:none; }
+  .step{ grid-template-columns:1fr; gap:var(--space-4); padding-block:var(--space-4) 0; border-top:var(--border) solid var(--color-text); border-bottom:none; }
+  .step__dot{ font-size:var(--text-6); }
 }
 @media (min-width:900px){
   .timeline{ padding-block:var(--space-8); padding-inline:var(--gutter-l-lg) var(--gutter-r-lg); }
@@ -1054,16 +1053,13 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
   .timeline__head{ margin-bottom:var(--space-4); }
   .br-pc{ display:none; }
   .swipe-hint{ display:block; margin:var(--space-3) 0 0; font-size:var(--text-1); font-weight:600; color:var(--color-accent); }
-  .timeline__steps, .products__grid{ display:grid; grid-template-columns:none; grid-auto-flow:column; gap:var(--space-3);
+  .products__grid{ display:grid; grid-template-columns:none; grid-auto-flow:column; gap:var(--space-3);
     overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scrollbar-width:none;
     margin-inline:calc(var(--gutter-l) * -1) calc(var(--gutter-r) * -1); padding-inline:var(--gutter-l) var(--gutter-r); scroll-padding-inline:var(--gutter-l); }
-  .timeline__steps::-webkit-scrollbar, .products__grid::-webkit-scrollbar{ display:none; }
-  .timeline__steps{ grid-auto-columns:78%; }
+  .products__grid::-webkit-scrollbar{ display:none; }
   .products__grid{ grid-auto-columns:46%; }
-  .step, .pcard{ scroll-snap-align:start; }
-  .step{ gap:var(--space-2); }
-  .step__dot{ font-size:var(--text-4); }
-  .timeline__note{ margin-top:var(--space-4); font-size:var(--text-1); }
+  .pcard{ scroll-snap-align:start; }
+  .timeline__note{ margin-top:var(--space-3); padding-top:0; border-top:none; font-size:var(--text-1); }
   .products__sub{ display:none; }
   .products__head{ margin-bottom:var(--space-4); }
 
