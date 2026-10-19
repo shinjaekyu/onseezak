@@ -482,6 +482,15 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 .gal__video--r34 video{ aspect-ratio:3 / 4; object-fit:contain; }
 .gal__video--land video{ aspect-ratio:4 / 3; max-height:none; object-fit:contain; }
 .gal__video figcaption{ margin-top:var(--space-2); font-size:var(--text-1); color:var(--color-muted); }
+/* 실제 착용 모습 (2026-10-19) */
+.rf{ margin-top:var(--space-4); padding-top:var(--space-4); border-top:var(--border) solid var(--color-line); }
+.rf__title{ margin:0 0 var(--space-1); font-size:var(--text-4); font-weight:700; color:var(--color-text); }
+.rf__note{ margin:0 0 var(--space-3); font-size:var(--text-2); color:var(--color-muted); word-break:keep-all; }
+.rf__grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:var(--space-2); }
+.rf__item{ margin:0; }
+.rf__item img, .rf__item video{ display:block; width:100%; height:auto; aspect-ratio:3 / 4; object-fit:cover; background:var(--color-surface); }
+.rf__item figcaption{ margin-top:var(--space-1); font-size:var(--text-1); color:var(--color-muted); }
+@media (min-width:900px){ .rf__grid{ grid-template-columns:repeat(3,1fr); } }
 /* ===== SIZE GUIDE ===== */
 .sg-head{ background:var(--color-surface); border-bottom:var(--border) solid var(--color-line); padding-block:var(--space-5) var(--space-6); padding-inline:var(--gutter-l) var(--gutter-r); }
 .sg-head__inner{ max-width:var(--container); margin-inline:auto; display:grid; gap:var(--space-4); }
@@ -661,6 +670,17 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
   .fs-prep__inner{ grid-template-columns:3fr 2fr; }
   .fs-faq__inner{ max-width:var(--container); }
 }
+
+/* 매장 사진 2장 · 간판 (2026-10-19) */
+.fs-photos__pair{ display:grid; gap:var(--space-4); max-width:var(--container); margin-inline:auto; }
+.fs-photos__pair .fs-photos__wide{ max-width:none; margin:0; }
+.fs-photos__pair .fs-photos__wide img{ aspect-ratio:4 / 3; }
+.fs-way__body{ display:grid; gap:var(--space-4); }
+.fs-way__sign{ margin:0; max-width:calc(var(--space-8) * 2); }
+.fs-way__sign img{ display:block; width:100%; height:auto; aspect-ratio:3 / 4; object-fit:cover; border-radius:var(--radius-sm); background:var(--color-bg); }
+.fs-way__sign figcaption{ margin-top:var(--space-2); font-size:var(--text-1); color:var(--color-muted); word-break:keep-all; }
+@media (min-width:600px){ .fs-photos__pair{ grid-template-columns:1fr 1fr; } }
+@media (min-width:1100px){ .fs-way__body{ grid-template-columns:calc(var(--space-8) * 2) 1fr; align-items:start; } }
 /* ===== FAQ ===== */
 .faq-head{ background:var(--color-surface); border-bottom:var(--border) solid var(--color-line); padding-block:var(--space-5) var(--space-6); padding-inline:var(--gutter-l) var(--gutter-r); }
 .faq-head__inner{ max-width:var(--container); margin-inline:auto; display:grid; gap:var(--space-4); }
