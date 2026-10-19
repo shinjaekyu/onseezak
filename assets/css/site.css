@@ -682,6 +682,56 @@ body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-i
   .faq-nav{ display:block; }
   .faq-head__chips{ display:none; }
 }
+
+/* ===== FAQ v2: 허브 카드 · 색인 · 근거 · 주제 페이지 ===== */
+.faq-head .label{ margin:0; }
+.faq-head__lead{ margin:0; max-width:var(--measure); color:var(--color-muted); word-break:keep-all; }
+.faq-cards{ background:var(--color-bg); padding-block:var(--space-6) 0; padding-inline:var(--gutter-l) var(--gutter-r); }
+.faq-cards__inner{ max-width:var(--container); margin-inline:auto; }
+.faq-cards__grid{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr; gap:var(--space-3); }
+.faq-card{ display:grid; gap:var(--space-1); padding:var(--space-4); background:var(--color-surface); text-decoration:none; color:inherit; min-height:var(--space-8); border-top:var(--border) solid var(--color-text); word-break:keep-all; }
+.faq-card:hover .faq-card__title{ text-decoration:underline; text-underline-offset:var(--space-1); }
+.faq-card:focus-visible{ outline:none; box-shadow:var(--focus-ring); }
+.faq-card__count{ font-size:var(--text-5); font-weight:300; letter-spacing:-0.02em; line-height:1; color:var(--color-text); }
+.faq-card__title{ font-size:var(--text-3); }
+.faq-card__intro{ font-size:var(--text-1); color:var(--color-muted); line-height:1.5; }
+.faq-idx{ background:var(--color-bg); padding-block:var(--space-7) var(--space-8); padding-inline:var(--gutter-l) var(--gutter-r); }
+.faq-idx__inner{ max-width:var(--container); margin-inline:auto; display:grid; gap:var(--space-5); }
+.faq-idx__title{ margin:0; font-size:var(--text-4); }
+.faq-idx__body{ display:grid; gap:var(--space-5); }
+.faq-idx__sec h2{ margin:0 0 var(--space-2); font-size:var(--text-3); display:flex; align-items:baseline; gap:var(--space-2); border-bottom:var(--border) solid var(--color-line); padding-bottom:var(--space-2); }
+.faq-idx__sec h2 a{ color:var(--color-text); text-decoration:none; }
+.faq-idx__sec h2 a:hover{ text-decoration:underline; text-underline-offset:var(--space-1); }
+.faq-idx__sec h2 span{ font-size:var(--text-1); font-weight:400; color:var(--color-muted); }
+.faq-idx__sec ul{ list-style:none; margin:0; padding:0; display:grid; }
+.faq-idx__q a{ display:grid; grid-template-columns:var(--space-6) 1fr; gap:var(--space-2); padding:var(--space-2) 0; min-height:var(--control-h-sm); align-items:center; color:var(--color-text); text-decoration:none; font-size:var(--text-2); word-break:keep-all; border-bottom:var(--border) solid var(--color-line); }
+.faq-idx__q a:hover{ color:var(--color-accent); }
+.faq-idx__q a:focus-visible{ outline:none; box-shadow:var(--focus-ring); }
+.faq__src{ margin:var(--space-3) 0 0; padding-top:var(--space-2); border-top:var(--border) solid var(--color-line); font-size:var(--text-1); color:var(--color-muted); line-height:1.6; word-break:break-word; }
+.faq__src b{ color:var(--color-text); margin-right:var(--space-1); }
+.faq__src a{ color:var(--color-accent); }
+.faq__low{ margin:var(--space-2) 0 0; font-size:var(--text-1); color:var(--color-muted); word-break:keep-all; }
+.faq-pn{ display:grid; grid-template-columns:1fr; gap:var(--space-2); }
+.faq-pn__link{ display:grid; gap:var(--space-1); padding:var(--space-3) 0; border-top:var(--border) solid var(--color-line); text-decoration:none; color:var(--color-text); word-break:keep-all; }
+.faq-pn__link span{ font-size:var(--text-1); letter-spacing:.08em; text-transform:uppercase; color:var(--color-muted); }
+.faq-pn__link:hover b{ text-decoration:underline; text-underline-offset:var(--space-1); }
+.faq-pn__link:focus-visible{ outline:none; box-shadow:var(--focus-ring); }
+.faq-pn__link--next{ text-align:right; }
+.faq-rel h2{ margin:0 0 var(--space-3); font-size:var(--text-4); }
+.faq-rel__list{ list-style:none; margin:0; padding:0; display:grid; gap:var(--space-2); }
+.faq-rel__card{ display:grid; gap:var(--space-1); padding:var(--space-3) var(--space-4); background:var(--color-surface); text-decoration:none; color:inherit; word-break:keep-all; }
+.faq-rel__card:hover b{ text-decoration:underline; text-underline-offset:var(--space-1); }
+.faq-rel__card:focus-visible{ outline:none; box-shadow:var(--focus-ring); }
+.faq-rel__meta{ font-size:var(--text-1); letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent); }
+.faq-rel__more{ font-size:var(--text-2); font-weight:600; }
+.faq-nav a[aria-current="page"]{ background:var(--color-surface); color:var(--color-text); }
+@media (min-width:700px){ .faq-cards__grid{ grid-template-columns:repeat(2,1fr); } .faq-pn{ grid-template-columns:1fr 1fr; } }
+@media (min-width:900px){
+  .faq-cards{ padding-block:var(--space-7) 0; padding-inline:var(--gutter-l-lg) var(--gutter-r-lg); }
+  .faq-cards__grid{ grid-template-columns:repeat(3,1fr); gap:var(--space-4); }
+  .faq-idx{ padding-inline:var(--gutter-l-lg) var(--gutter-r-lg); }
+  .faq-idx__body{ grid-template-columns:1fr 1fr; gap:var(--space-5) var(--space-7); }
+}
 /* ===== ABOUT ===== */
 .ab-hero{ background:var(--color-surface); padding-block:var(--space-5) var(--space-8); padding-inline:var(--gutter-l) var(--gutter-r); }
 .ab-hero__inner{ max-width:var(--container); margin-inline:auto; display:grid; gap:var(--space-4); }
