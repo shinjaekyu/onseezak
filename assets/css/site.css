@@ -323,7 +323,7 @@ body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-i
   .guide__grid{ grid-template-columns:1.2fr 0.8fr; gap:var(--space-7); align-items:start; }
   .gfeat__img{ aspect-ratio:16/9; }
   .gfeat__title{ font-size:var(--text-5); }
-  .gitem{ grid-template-columns:1fr 2fr; padding:var(--space-4) 0; }
+  .gitem{ grid-template-columns:var(--space-8) 1fr; padding:var(--space-3) 0; }
   .gitem__img{ aspect-ratio:3/4; object-position:50% 10%; }
 }
 /* ============================================================
