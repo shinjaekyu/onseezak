@@ -572,6 +572,9 @@ body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-i
 .fs-note{ margin:var(--space-4) 0 0; font-size:var(--text-2); color:var(--color-muted); word-break:keep-all; }
 
 .fs-photos{ background:var(--color-bg); padding-block:var(--space-7); padding-inline:var(--gutter-l) var(--gutter-r); }
+.fs-photos__wide{ margin:0 auto var(--space-3); max-width:calc(var(--container) * 2 / 3); }
+.fs-photos__wide img{ display:block; width:100%; height:auto; aspect-ratio:16 / 9; object-fit:cover; border-radius:var(--radius-md); background:var(--color-surface); }
+.fs-photos__wide figcaption{ margin-top:var(--space-2); font-size:var(--text-1); color:var(--color-muted); word-break:keep-all; }
 .fs-photos__grid{ margin:0; padding:0; list-style:none; display:grid; gap:var(--space-3); }
 .fs-photos__grid li{ border-radius:var(--radius-md); overflow:hidden; background:var(--color-surface); }
 .fs-photos__grid img{ display:block; width:100%; height:auto; aspect-ratio:3 / 4; object-fit:cover; }
