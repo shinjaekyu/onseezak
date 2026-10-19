@@ -139,6 +139,15 @@ body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-i
   .footer__cols{ grid-template-columns:repeat(3,1fr); }
   .footer__biz{ grid-column:1 / -1; }
 }
+
+/* 모바일 하단 고정 연락 바 — 900px 미만에서만 */
+.mbar{ position:fixed; left:0; right:0; bottom:0; z-index:60; display:grid; grid-template-columns:repeat(3,1fr); background:var(--color-brand); padding-bottom:env(safe-area-inset-bottom,0px); }
+.mbar a{ min-height:var(--control-h); display:flex; align-items:center; justify-content:center; gap:var(--space-2); color:var(--color-surface); font-size:var(--text-2); font-weight:600; text-decoration:none; }
+.mbar a + a{ border-left:var(--border) solid color-mix(in srgb, var(--color-surface) 25%, transparent); }
+.mbar svg{ width:var(--space-4); height:var(--space-4); fill:none; stroke:currentColor; stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round; }
+.mbar a:focus-visible{ outline:none; box-shadow:inset var(--focus-ring); }
+body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
+@media (min-width:900px){ .mbar{ display:none; } body{ padding-bottom:0; } }
 /* ===== 404 ===== */
 .nf{ background:var(--color-bg); padding-block:var(--space-8); padding-inline:var(--gutter-l) var(--gutter-r); min-height:60vh; display:grid; place-items:center; }
 .nf__inner{ max-width:var(--measure); display:grid; gap:var(--space-4); text-align:center; word-break:keep-all; }
@@ -1017,4 +1026,54 @@ body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-i
   .pt-size__note{ grid-column:2; }
   .pt-flow__list{ grid-template-columns:repeat(3,1fr); border-top:none; }
   .pt-flow__list li{ border-top:var(--border) solid var(--color-brand); border-bottom:none; padding-right:var(--space-4); }
+}
+/* ============================================================
+   메인 — 모바일 전용(900px 미만): 첫 화면 임팩트, 세로 길이 단축
+   ============================================================ */
+.swipe-hint{ display:none; }
+.hero__trust li{ font-weight:600; color:var(--color-text); }
+@media (max-width:899px){
+  /* 히어로: 사진 먼저(가장자리까지), 큰 제목, 강점 3칸 */
+  .hero{ padding-block:0 var(--space-6); }
+  .hero__inner{ gap:var(--space-5); }
+  .hero__media{ order:-1; margin-inline:calc(var(--gutter-l) * -1) calc(var(--gutter-r) * -1); }
+  .hero__caption{ display:flex; justify-content:space-between; align-items:center; gap:var(--space-3); padding:var(--space-2) var(--gutter-r) 0 var(--gutter-l); max-width:none; }
+  .hero__caption-desc{ display:none; }
+  .hero__eyebrow{ display:none; }
+  .hero__title{ font-size:var(--text-7); margin-bottom:var(--space-3); }
+  .hero__lead{ margin-bottom:var(--space-4); }
+  .hero__actions{ display:grid; grid-template-columns:1fr 1fr; margin-bottom:var(--space-4); }
+  .hero__actions .btn{ padding-inline:var(--space-2); }
+  .hero__trust{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:var(--border) solid var(--color-line); border-bottom:var(--border) solid var(--color-line); }
+  .hero__trust li{ justify-content:center; text-align:center; padding:var(--space-3) var(--space-1); font-size:var(--text-1); line-height:1.4; }
+  .hero__trust li + li{ border-left:var(--border) solid var(--color-line); }
+  .hero__trust li::before{ display:none; }
+
+  /* 단계·제품: 옆으로 넘기는 카드 */
+  .timeline, .products, .store, .guide{ padding-block:var(--space-6); }
+  .timeline__head{ margin-bottom:var(--space-4); }
+  .swipe-hint{ display:block; margin:var(--space-3) 0 0; font-size:var(--text-1); font-weight:600; color:var(--color-accent); }
+  .timeline__steps, .products__grid{ display:grid; grid-template-columns:none; grid-auto-flow:column; gap:var(--space-3);
+    overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scrollbar-width:none;
+    margin-inline:calc(var(--gutter-l) * -1) calc(var(--gutter-r) * -1); padding-inline:var(--gutter-l) var(--gutter-r); scroll-padding-inline:var(--gutter-l); }
+  .timeline__steps::-webkit-scrollbar, .products__grid::-webkit-scrollbar{ display:none; }
+  .timeline__steps{ grid-auto-columns:78%; }
+  .products__grid{ grid-auto-columns:46%; }
+  .step, .pcard{ scroll-snap-align:start; }
+  .step{ gap:var(--space-2); }
+  .step__dot{ font-size:var(--text-4); }
+  .timeline__note{ margin-top:var(--space-4); font-size:var(--text-1); }
+  .products__sub{ display:none; }
+  .products__head{ margin-bottom:var(--space-4); }
+
+  /* 매장: 사진 가로형 */
+  .store__img{ aspect-ratio:4/3; object-position:50% 45%; }
+
+  .store__actions{ display:grid; grid-template-columns:1fr 1fr; gap:var(--space-2); }
+  .store__actions .btn{ padding-inline:var(--space-2); font-size:var(--text-2); }
+
+  /* 가이드: 요약 숨기고 3개만 */
+  .gfeat__desc, .gitem__desc{ display:none; }
+  .glist li:nth-child(n+4){ display:none; }
+  .gitem{ grid-template-columns:var(--space-7) 1fr; }
 }
