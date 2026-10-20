@@ -277,6 +277,7 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
   .timeline__title{ margin:0; }
   .timeline__steps{ gap:var(--space-5); }
 }
+@media (min-width:700px){ .step{ grid-template-rows:auto 1fr; } .step__body{ display:flex; flex-direction:column; } .step__products{ margin-top:auto; padding-top:var(--space-2); } }
 /* ============================================================
    섹션 4. 피팅 매장 — v2 (사진 + 3단계 안내, 갈색 띠 제거)
    ============================================================ */
