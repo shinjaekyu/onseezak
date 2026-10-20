@@ -1093,12 +1093,22 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
    메인 — 모바일 전용(900px 미만): 첫 화면 임팩트, 세로 길이 단축
    ============================================================ */
 .swipe-hint{ display:none; }
+.hero__img-m, .hero__over{ display:none; }
 .hero__trust li{ font-weight:600; color:var(--color-text); }
 @media (max-width:899px){
   /* 히어로: 사진 먼저(가장자리까지), 큰 제목, 강점 3칸 */
   .hero{ padding-block:0 var(--space-6); }
   .hero__inner{ gap:var(--space-5); }
   .hero__media{ order:-1; margin-inline:calc(var(--gutter-l) * -1) calc(var(--gutter-r) * -1); }
+  /* D안: 매장 사진 + 제목 겹침 (2026-10-20). 사진 위 글자색은 사진 기준이라 라이트 토큰 값 고정 */
+  .hero__media{ position:relative; --ov-ink:#1C1A18; --ov-text:#F4F2EF; --ov-sub:#D9D2C9; }
+  .hero__media .hero__img{ display:none; }
+  .hero__img-m{ display:block; width:100%; height:auto; aspect-ratio:4 / 5; max-height:72vh; object-fit:cover; object-position:50% 60%; background:var(--color-surface); }
+  .hero__over{ display:block; position:absolute; left:0; right:0; bottom:0; padding:var(--space-8) var(--gutter-r) var(--space-4) var(--gutter-l); background:linear-gradient(to top, color-mix(in srgb, var(--ov-ink) 82%, transparent), transparent); color:var(--ov-text); pointer-events:none; }
+  .hero__over p{ margin:0 0 var(--space-2); font-size:var(--text-1); font-weight:600; letter-spacing:.12em; color:var(--ov-sub); }
+  .hero__over .hero__over-t{ margin:0; font-size:var(--text-7); font-weight:700; line-height:1.15; letter-spacing:0; color:var(--ov-text); }
+  .hero__media .hero__caption{ display:none; }
+  .hero__title{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; margin:0; }
   .hero__caption{ display:flex; justify-content:space-between; align-items:center; gap:var(--space-3); padding:var(--space-2) var(--gutter-r) 0 var(--gutter-l); max-width:none; }
   .hero__caption-desc{ display:none; }
   .hero__eyebrow{ display:none; }
