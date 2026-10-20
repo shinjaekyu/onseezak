@@ -693,6 +693,7 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 .fs-measure__copy .fs-measure__cap{ margin:0; font-size:var(--text-1); }
 @media (min-width:700px){ .fs-measure{ grid-template-columns:minmax(0, calc(var(--space-8) * 3 + var(--space-5))) 1fr; align-items:center; gap:var(--space-5); } }
 @media (min-width:900px){ .fs-flow__steps li{ align-content:start; } .fs-flow__steps b{ align-self:start; } }
+.fs-prep__inner > *{ min-width:0; } .fs-contact a{ overflow-wrap:anywhere; } @media (max-width:399px){ .fs-prep__card{ padding:var(--space-4); } }
 /* ===== FAQ ===== */
 .faq-head{ background:var(--color-surface); border-bottom:var(--border) solid var(--color-line); padding-block:var(--space-5) var(--space-6); padding-inline:var(--gutter-l) var(--gutter-r); }
 .faq-head__inner{ max-width:var(--container); margin-inline:auto; display:grid; gap:var(--space-4); }
