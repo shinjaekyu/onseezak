@@ -192,6 +192,31 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
   .hero__caption{ grid-template-columns:auto 1fr; gap:var(--space-1) var(--space-4); max-width:none; }
   .hero__caption-link{ grid-column:2; }
 }
+
+/* 사진 위 제목: 기본 숨김(모바일은 mobile.css, PC는 아래에서 표시) */
+.hero__over{ display:none; }
+
+/* PC B안: 매장 사진 가로 전체 + 제목 겹침 (2026-10-20). 사진 위 글자색은 사진 기준이라 라이트 토큰 값 고정 */
+@media (min-width:900px){
+  .hero{ padding-top:0; }
+  .hero__inner{ max-width:none; grid-template-columns:1fr; gap:var(--space-6); align-items:start; }
+  .hero__media{ order:-1; position:relative; margin-inline:calc(var(--gutter-l-lg) * -1) calc(var(--gutter-r-lg) * -1); --ov-ink:#1C1A18; --ov-text:#F4F2EF; --ov-sub:#D9D2C9; }
+  .hero__img{ aspect-ratio:21 / 9; max-height:72vh; object-fit:cover; object-position:50% 62%; }
+  .hero__over{ position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end;
+    padding:var(--space-8) max(var(--gutter-r-lg), calc((100% - var(--container)) / 2)) var(--space-6) max(var(--gutter-l-lg), calc((100% - var(--container)) / 2));
+    background:linear-gradient(to top, color-mix(in srgb, var(--ov-ink) 82%, transparent), color-mix(in srgb, var(--ov-ink) 30%, transparent) 50%, transparent 75%),
+               linear-gradient(to right, color-mix(in srgb, var(--ov-ink) 45%, transparent), transparent 55%);
+    color:var(--ov-text); pointer-events:none; }
+  .hero__over p{ margin:0 0 var(--space-2); font-size:var(--text-1); font-weight:600; letter-spacing:.12em; color:var(--ov-sub); }
+  .hero__over .hero__over-t{ margin:0; font-size:var(--text-7); font-weight:700; line-height:1.1; letter-spacing:-0.03em; color:var(--ov-text); }
+  .hero__caption{ display:none; }
+  .hero__copy{ position:relative; display:grid; grid-template-columns:1fr auto; gap:var(--space-5) var(--space-7); align-items:center; width:100%; max-width:var(--container); margin:0 auto; }
+  .hero__eyebrow, .hero__title{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; margin:0; }
+  .hero__side{ display:contents; }
+  .hero__lead{ grid-column:1; margin:0; }
+  .hero__actions{ grid-column:2; grid-row:1; margin:0; }
+  .hero__trust{ grid-column:1 / -1; }
+}
 /* ============================================================
    섹션 3. 대표 제품 4 (회복용 3 + 생활용 1) — v3 (흰 바탕, 사진 타일만 웜그레이)
    ============================================================ */
@@ -1096,7 +1121,7 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
    메인 — 모바일 전용(900px 미만): 첫 화면 임팩트, 세로 길이 단축
    ============================================================ */
 .swipe-hint{ display:none; }
-.hero__img-m, .hero__over{ display:none; }
+.hero__img-m{ display:none; }
 .hero__trust li{ font-weight:600; color:var(--color-text); }
 @media (max-width:899px){
   /* 히어로: 사진 먼저(가장자리까지), 큰 제목, 강점 3칸 */
