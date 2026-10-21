@@ -99,6 +99,14 @@ body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-i
 @media (min-width:900px){
   .nav{ display:block; } .header__cta{ display:inline-flex; } .menu-btn{ display:none; } .header.is-open .mnav{ display:none; }
   .header__inner{ padding-left:max(var(--space-4),env(safe-area-inset-left,0px)); padding-right:max(var(--space-4),env(safe-area-inset-right,0px)); }
+  .nav__link{ white-space:nowrap; }
+}
+/* 900~1199px: 메뉴 글자 줄바꿈 방지 — 간격·자간을 줄이고 로고 보조 문구 숨김 */
+@media (min-width:900px) and (max-width:1199px){
+  .nav__list{ gap:var(--space-3); }
+  .nav__link{ letter-spacing:.04em; }
+  .header__logo small{ display:none; }
+  .header__cta{ white-space:nowrap; }
 }
 /* ============================================================
    섹션 7. 후기(자리만, 비공개) + 섹션 8. 푸터 — 추가 CSS 맨 아래에 이어서 붙여넣기
