@@ -1,0 +1,22 @@
+name: IndexNow (Bing·Naver 등 변경 알림)
+on:
+  push:
+    branches: [main]
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: 바뀐 페이지를 IndexNow로 알림
+        run: |
+          KEY=$(ls *.txt | grep -E '^[0-9a-f]{32}\.txt$' | head -1 | sed 's/\.txt$//')
+          [ -z "$KEY" ] && { echo "no key"; exit 0; }
+          URLS=$(git diff --name-only HEAD~1 HEAD -- '*.html' | grep -v '^404.html$' | sed -e 's#index\.html$##' -e 's#^#https://onseezak.com/#' | sort -u)
+          [ -z "$URLS" ] && { echo "no page changes"; exit 0; }
+          JSON=$(printf '%s\n' $URLS | python3 -c "import sys,json;print(json.dumps({'host':'onseezak.com','key':'$KEY','keyLocation':'https://onseezak.com/$KEY.txt','urlList':[l.strip() for l in sys.stdin if l.strip()]}))")
+          echo "$JSON"
+          for EP in https://api.indexnow.org/indexnow https://searchadvisor.naver.com/indexnow; do
+            curl -s -o /dev/null -w "$EP %{http_code}\n" -X POST "$EP" -H 'Content-Type: application/json; charset=utf-8' -d "$JSON" || true
+          done
