@@ -529,6 +529,11 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 .rf__item--tall video{ aspect-ratio:3 / 5; object-fit:contain; background:var(--color-surface); }
 /* 세트 사진은 원본 1:1 비율 그대로 (2026-10-20) */
 .gal__main img[src*="set-85-74-sq"], .gal__main img[src*="set-04-72-sq"], .gal__thumb img[src*="set-85-74-sq"], .gal__thumb img[src*="set-04-72-sq"]{ aspect-ratio:1; object-fit:contain; object-position:50% 50%; }
+/* 제품 보강 블록: 고르는 기준·확인할 점·관련 질문 (토큰만 사용) */
+.pick h3{ margin:var(--space-3) 0 0; font-size:var(--text-3); }
+.pick__list, .pick__faq{ margin:0; padding-left:var(--space-5); display:grid; gap:var(--space-2); max-width:var(--measure); line-height:var(--leading-body); }
+.pick__faq a{ color:var(--color-text); text-decoration:underline; text-underline-offset:3px; }
+.pick .pinfo__note a{ color:inherit; text-decoration:underline; }
 /* ===== SIZE GUIDE ===== */
 .sg-head{ background:var(--color-surface); border-bottom:var(--border) solid var(--color-line); padding-block:var(--space-5) var(--space-6); padding-inline:var(--gutter-l) var(--gutter-r); }
 .sg-head__inner{ max-width:var(--container); margin-inline:auto; display:grid; gap:var(--space-4); }
@@ -1036,6 +1041,13 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
   .art__body-inner{ grid-template-columns:1fr 3fr; }
   .art__toc{ display:block; }
 }
+/* 가이드 본문 목록·표 (토큰만 사용) */
+.art__list{ margin:0; padding-left:var(--space-5); display:grid; gap:var(--space-2); line-height:1.8; word-break:keep-all; }
+.art__tablewrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.art__table{ border-collapse:collapse; width:100%; min-width:560px; font-size:var(--text-2); line-height:1.5; }
+.art__table th, .art__table td{ padding:var(--space-2) var(--space-3); border-bottom:var(--border) solid var(--color-line); text-align:left; vertical-align:top; word-break:keep-all; }
+.art__table thead th{ background:var(--color-surface); font-weight:700; }
+.art__table tbody th{ font-weight:700; white-space:nowrap; }
 /* ===== 약관·개인정보 ===== */
 .legal__head{ background:var(--color-surface); border-bottom:var(--border) solid var(--color-line); padding-block:var(--space-5) var(--space-6); padding-inline:var(--gutter-l) var(--gutter-r); }
 .legal__head-inner{ max-width:var(--container); margin-inline:auto; display:grid; gap:var(--space-3); }
