@@ -625,6 +625,10 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 .sg-photo figcaption{ margin:0; font-size:var(--text-1); color:var(--color-muted); text-align:center; word-break:keep-all; max-width:var(--measure); }
 .sg-photos{ display:grid; gap:var(--space-5); justify-items:center; }
 .sg-photo--arm .sg-photo__frame{ max-width:calc(var(--measure) * 0.65); }
+
+/* 셀프 측정 범위 안내 */
+.sg-scope{ margin:0 0 var(--space-4); padding:var(--space-3) var(--space-4); background:var(--color-surface); border-radius:var(--radius-sm); font-size:var(--text-2); line-height:1.7; word-break:keep-all; }
+.sg-scope a{ color:var(--color-accent); font-weight:600; }
 /* ===== FITTING STORE ===== */
 .fs-hero{ background:var(--color-brand); color:var(--color-surface); padding-block:var(--space-5) 0; padding-inline:var(--gutter-l) var(--gutter-r); }
 .fs-hero__inner{ max-width:var(--container); margin-inline:auto; display:grid; gap:var(--space-4); padding-bottom:var(--space-7); }
@@ -738,6 +742,13 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 
 @media (min-width:900px){ .fs-flow__steps li{ align-content:start; } .fs-flow__steps b{ align-self:start; } }
 .fs-prep__inner > *{ min-width:0; } .fs-contact a{ overflow-wrap:anywhere; } @media (max-width:399px){ .fs-prep__card{ padding:var(--space-4); } }
+
+/* 매장 측정표(빈 양식) */
+.fs-measure__form{ margin:0; display:grid; gap:var(--space-2); }
+.fs-measure__form img{ display:block; width:100%; height:auto; border:var(--border) solid var(--color-line); border-radius:var(--radius-sm); background:#FFFFFF; }
+.fs-measure__form figcaption{ font-size:var(--text-1); color:var(--color-muted); }
+.fs-measure__copy p + p{ margin-top:0; }
+@media (min-width:720px){ .fs-measure{ grid-template-columns:1fr 1fr; gap:var(--space-5); align-items:start; } }
 /* ===== FAQ ===== */
 .faq-head{ background:var(--color-surface); border-bottom:var(--border) solid var(--color-line); padding-block:var(--space-5) var(--space-6); padding-inline:var(--gutter-l) var(--gutter-r); }
 .faq-head__inner{ max-width:var(--container); margin-inline:auto; display:grid; gap:var(--space-4); }
