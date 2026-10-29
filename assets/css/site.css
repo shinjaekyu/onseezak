@@ -1036,6 +1036,18 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 .ab-make__item figcaption{ display:grid; gap:var(--space-1); font-size:var(--text-2); color:var(--color-muted); line-height:1.5; word-break:keep-all; }
 .ab-make__item figcaption b{ font-size:var(--text-3); color:var(--color-text); }
 @media (min-width:900px){ .ab-make__grid{ grid-template-columns:repeat(3,1fr); gap:var(--space-5) var(--space-4); } }
+
+/* 콘텐츠 작성 원칙 (#editorial) */
+.ab-edit{ padding-block:var(--space-7); padding-inline:var(--gutter-l) var(--gutter-r); background:var(--color-surface); }
+.ab-edit__inner{ max-width:var(--container); margin:0 auto; display:grid; gap:var(--space-3); }
+.ab-edit h2{ margin:0; word-break:keep-all; }
+.ab-edit__by{ margin:0; color:var(--color-muted); font-size:var(--text-2); }
+.ab-edit__by b{ color:var(--color-text); }
+.ab-edit__list{ margin:var(--space-3) 0 0; display:grid; gap:var(--space-3); }
+.ab-edit__list div{ background:var(--color-bg); border-radius:var(--radius-md); padding:var(--space-4); display:grid; gap:var(--space-1); }
+.ab-edit__list dt{ font-weight:700; color:var(--color-accent); font-size:var(--text-2); }
+.ab-edit__list dd{ margin:0; line-height:1.75; word-break:keep-all; }
+@media (min-width:900px){ .ab-edit__list{ grid-template-columns:1fr 1fr; } }
 /* ===== COMPRESSION GUIDE 허브 ===== */
 .ghub-head{ background:var(--color-surface); border-bottom:var(--border) solid var(--color-line); padding-block:var(--space-5) var(--space-6); padding-inline:var(--gutter-l) var(--gutter-r); }
 .ghub-head__inner{ max-width:var(--container); margin-inline:auto; display:grid; gap:var(--space-4); }
