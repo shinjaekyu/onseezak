@@ -140,7 +140,7 @@ body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-i
 .footer__biz{ border-top:var(--border) solid var(--color-line); padding-top:var(--space-4); display:grid; gap:var(--space-1); font-size:var(--text-1); line-height:var(--leading-body); }
 .footer__biz p{ margin:0; word-break:keep-all; }
 .footer__biz span + span::before{ content:"·"; margin:0 var(--space-2); }
-.footer__copy{ margin:var(--space-2) 0 0; font-size:var(--text-1); }
+.footer__copy{ margin:var(--space-2) 0 0; font-size:var(--text-0); line-height:1.6; }
 @media (min-width:900px){
   .footer{ padding-block:var(--space-7) var(--space-5); padding-inline:var(--gutter-l-lg) var(--gutter-r-lg); }
   .footer__inner{ grid-template-columns:1.2fr 2fr; }
@@ -164,6 +164,47 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 .nf__lead,.nf__contact{ margin:0; color:var(--color-muted); font-size:var(--text-2); }
 .nf__links{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:var(--space-2); }
 .nf__contact a{ color:var(--color-brand); }
+/* 홈 하단 인스타그램 칸 (토큰만 사용) */
+.insta{ padding-block:var(--space-7); padding-inline:var(--gutter-l) var(--gutter-r); background:var(--color-bg); }
+.insta__inner{ max-width:var(--container); margin:0 auto; display:grid; gap:var(--space-5); }
+.insta__head{ display:grid; gap:var(--space-3); align-items:end; }
+.insta__title{ margin:0 0 var(--space-2); word-break:keep-all; }
+.insta__lead{ margin:0; color:var(--color-muted); font-size:var(--text-2); word-break:keep-all; }
+.insta__follow{ justify-self:start; }
+.insta__grid{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-2); }
+.insta__item{ display:block; aspect-ratio:1; overflow:hidden; border-radius:var(--radius-sm); background:var(--color-surface); }
+.insta__item img{ display:block; width:100%; height:100%; object-fit:cover; transition:transform .25s ease; }
+.insta__item:hover img{ transform:scale(1.04); }
+.insta__item:focus-visible{ outline:none; box-shadow:var(--focus-ring); }
+.br-m{ display:inline; }
+@media (min-width:720px){
+  .insta__head{ grid-template-columns:1fr auto; }
+  .insta__grid{ grid-template-columns:repeat(6,1fr); gap:var(--space-3); }
+  .br-m{ display:none; }
+}
+@media (prefers-reduced-motion:reduce){ .insta__item img{ transition:none; } }
+/* /ig/ 인스타 프로필 링크 페이지: 휴대폰 한 손 사용 기준, 가운데 좁은 칸 (토큰만 사용) */
+.ig{ background:var(--color-surface); padding-block:var(--space-6) var(--space-7); padding-inline:var(--gutter-l) var(--gutter-r); }
+.ig__inner{ max-width:calc(var(--space-8) * 6); margin:0 auto; display:grid; gap:var(--space-4); }
+.ig__title{ margin:0; font-size:var(--text-6); font-weight:800; letter-spacing:-.02em; }
+.ig__lead{ margin:0; color:var(--color-muted); word-break:keep-all; }
+.ig__facts{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:var(--space-2); }
+.ig__facts li{ font-size:var(--text-1); font-weight:700; color:var(--color-accent); background:var(--color-bg); border:var(--border) solid var(--color-line); border-radius:var(--radius-full); padding:var(--space-1) var(--space-3); }
+.ig__links{ display:grid; gap:var(--space-2); margin-top:var(--space-2); }
+.ig__btn{ width:100%; box-sizing:border-box; min-height:calc(var(--control-h) + var(--space-2)); }
+.ig__links .btn--secondary{ background:var(--color-bg); }
+.ig__week{ background:var(--color-bg); border-radius:var(--radius-md); padding:var(--space-4); display:grid; gap:var(--space-2); margin-top:var(--space-2); }
+.ig__week-tag{ margin:0; font-size:var(--text-1); font-weight:800; color:var(--color-accent); letter-spacing:.04em; }
+.ig__week-q{ margin:0; font-size:var(--text-4); word-break:keep-all; }
+.ig__week-a{ margin:0; color:var(--color-muted); font-size:var(--text-2); line-height:1.7; word-break:keep-all; }
+.ig__week-links{ display:flex; flex-wrap:wrap; gap:var(--space-4); margin-top:var(--space-1); }
+.ig__week-links a{ font-weight:700; color:var(--color-accent); text-decoration:none; padding-block:var(--space-1); }
+.ig__more-title{ margin:var(--space-2) 0 var(--space-2); font-size:var(--text-3); }
+.ig__more ul{ list-style:none; margin:0; padding:0; display:grid; border-top:var(--border) solid var(--color-line); }
+.ig__more a{ display:block; padding:var(--space-3) 0; border-bottom:var(--border) solid var(--color-line); color:var(--color-text); text-decoration:none; word-break:keep-all; }
+.ig__more a::after{ content:" →"; color:var(--color-accent); }
+.ig a:focus-visible{ outline:none; box-shadow:var(--focus-ring); }
+.ig__note{ margin:0; word-break:keep-all; font-size:var(--text-1); color:var(--color-muted); }
 /* ============================================================
    섹션 1. 히어로 — v2.1 (글 위 / 세트 룩북 띠 아래)
    토큰 외 값 사용 없음.
