@@ -1287,6 +1287,33 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 }
 .nw-post__body .nw-h{ margin:var(--space-5) 0 var(--space-2); font-size:var(--text-4); }
 @media (max-width:419px){ .promo__tag{ display:none; } }
+/* 띠 움직임 — 마우스를 올리거나 키보드로 선택하면 멈춤, '동작 줄이기' 설정이면 움직이지 않음 */
+.promo__link{ font-size:var(--text-2); font-weight:700; flex-wrap:nowrap; }
+.promo__vp{ position:relative; overflow:hidden; flex:0 1 auto; min-width:0; }
+.promo__item{ display:block; white-space:nowrap; }
+.promo--rotate .promo__vp{ height:1.6em; line-height:1.6em; }
+.promo--rotate .promo__track{ display:block; animation:promo-rot 6s ease-in-out infinite; }
+.promo--marquee .promo__vp{ flex:1 1 auto; mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
+.promo--marquee .promo__track{ display:flex; width:max-content; animation:promo-marq 28s linear infinite; }
+.promo--marquee .promo__item{ padding-right:var(--space-6); }
+@keyframes promo-marq{ to{ transform:translateX(-50%); } }
+.promo--pulse .promo__tag{ animation:promo-pulse 1.2s ease-in-out infinite alternate; }
+@keyframes promo-pulse{ from{ background:transparent; color:var(--color-bg); } to{ background:var(--color-bg); color:var(--color-accent); } }
+.promo__link:hover .promo__track, .promo__link:focus-visible .promo__track, .promo__link:hover .promo__tag, .promo__link:focus-visible .promo__tag{ animation-play-state:paused; }
+@media (prefers-reduced-motion:reduce){
+  .promo__track, .promo__tag{ animation:none !important; }
+  .promo--rotate .promo__vp, .promo--marquee .promo__vp{ height:auto; mask-image:none; }
+  .promo--rotate .promo__item:last-child, .promo--marquee .promo__item:nth-child(n+3){ display:none; }
+  .promo__item{ white-space:normal; }
+}
+.promo__more{ flex:none; }
+.promo__tag{ flex:none; }
+.promo--rotate .promo__item{ text-align:center; }
+.promo--pulse .promo__txt{ animation:promo-blink 1.4s ease-in-out infinite alternate; }
+@keyframes promo-blink{ from{ opacity:1; } to{ opacity:.45; } }
+.promo__link:hover .promo__txt, .promo__link:focus-visible .promo__txt{ animation-play-state:paused; }
+@media (prefers-reduced-motion:reduce){ .promo__txt{ animation:none !important; } }
+.promo--rotate .promo__vp{ flex:1 1 auto; max-width:calc(var(--measure) - var(--space-8)); }
 /* ============================================================
    외국인용 안내 페이지 (/en/) — 토큰만 사용
    ============================================================ */
