@@ -67,6 +67,14 @@ textarea.field__input{min-height:calc(var(--control-h) * 2.5);padding:var(--spac
 summary{min-height:var(--control-h-sm);box-sizing:border-box;}
 @media (min-width:900px){:root{--text-1:13px;--text-2:16px;--text-3:17px;--text-4:21px;--text-5:26px;}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* PC(900px 이상) 라이트 모드: 분홍은 포인트(주요 버튼·라벨·태그)에만 — 넓은 배경은 중성 웜그레이 */
+@media (min-width:900px){
+  :root{ --color-surface:#F6F4F1; }
+  body .btn--secondary{ color:var(--color-text); border-color:var(--color-text); }
+  body .btn--secondary:hover{ background:var(--color-surface); }
+  body .promo{ background:var(--color-brand); }
+  body .promo__tag{ background:var(--color-accent); border-color:var(--color-accent); color:#FFFFFF; }
+}
 /* ============================================================
    공통 헤더 (모든 페이지 상단)
    ============================================================ */
