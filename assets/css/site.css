@@ -172,6 +172,26 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 .nf__lead,.nf__contact{ margin:0; color:var(--color-muted); font-size:var(--text-2); }
 .nf__links{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:var(--space-2); }
 .nf__contact a{ color:var(--color-brand); }
+/* 위험 신호 안내 상자 — 토큰만 사용. 경고색을 새로 만들지 않고 글자색 굵은 테두리로 구분 */
+.safety-wrap{ padding-inline:var(--gutter-l) var(--gutter-r); }
+@media (min-width:900px){ .safety-wrap{ padding-inline:var(--gutter-l-lg) var(--gutter-r-lg); } }
+.safety{ box-sizing:border-box; max-width:var(--container); margin:var(--space-4) auto; border:var(--border) solid var(--color-text); border-left-width:var(--space-1); border-radius:var(--radius-sm); padding:var(--space-3) var(--space-4); background:var(--color-bg); word-break:keep-all; }
+.safety__title{ margin:0 0 var(--space-2); font-size:var(--text-3); font-weight:800; }
+.safety__grid{ display:grid; gap:var(--space-2); }
+.safety__grid b{ display:block; font-size:var(--text-2); }
+.safety__grid p{ margin:0; font-size:var(--text-2); color:var(--color-muted); line-height:1.6; }
+.safety__foot{ margin:var(--space-2) 0 0; font-size:var(--text-1); color:var(--color-muted); }
+.pdesc .safety{ margin:0; max-width:none; }
+@media (min-width:900px){ .safety__grid{ grid-template-columns:1fr 1fr; column-gap:var(--space-5); } }
+
+/* 참고 자료 목록 */
+.refs{ margin-top:var(--space-5); padding-top:var(--space-4); border-top:var(--border) solid var(--color-line); word-break:keep-all; }
+.refs h2{ font-size:var(--text-4); margin:0 0 var(--space-2); }
+.refs__lead{ margin:0 0 var(--space-3); font-size:var(--text-1); color:var(--color-muted); }
+.refs__h{ margin:var(--space-3) 0 var(--space-1); font-size:var(--text-2); }
+.refs ol{ margin:0; padding-left:var(--space-4); display:grid; gap:var(--space-1); font-size:var(--text-1); line-height:1.6; }
+.refs a{ word-break:break-word; }
+.refs__dom{ color:var(--color-muted); }
 /* 홈 하단 인스타그램 칸 (토큰만 사용) */
 .insta{ padding-block:var(--space-7); padding-inline:var(--gutter-l) var(--gutter-r); background:var(--color-bg); }
 .insta__inner{ max-width:var(--container); margin:0 auto; display:grid; gap:var(--space-5); }
@@ -1129,6 +1149,19 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 .art__table th, .art__table td{ padding:var(--space-2) var(--space-3); border-bottom:var(--border) solid var(--color-line); text-align:left; vertical-align:top; word-break:keep-all; }
 .art__table thead th{ background:var(--color-surface); font-weight:700; }
 .art__table tbody th{ font-weight:700; white-space:nowrap; }
+/* 기준표: 열 너비 고정(첫 열 좁게, 내용 열 균등) */
+.art__table--cmp{ table-layout:fixed; width:100%; }
+.art__table--cmp th, .art__table--cmp td{ white-space:normal; word-break:keep-all; vertical-align:top; }
+.art__table--cmp thead th:first-child, .art__table.art__table--cmp tbody th{ width:24%; white-space:normal; }
+@media (max-width:599px){
+  .art__table.art__table--cmp{ min-width:0; }
+  .art__table--cmp thead{ display:none; }
+  .art__table--cmp, .art__table--cmp tbody, .art__table--cmp tr, .art__table.art__table--cmp tbody th, .art__table--cmp td{ display:block; width:auto; }
+  .art__table--cmp tr{ border-bottom:var(--border) solid var(--color-line); padding-block:var(--space-2); }
+  .art__table.art__table--cmp tbody th{ padding:var(--space-2) 0 var(--space-1); border:0; }
+  .art__table--cmp td{ padding:var(--space-1) 0; border:0; }
+  .art__table--cmp td[data-label]::before{ content:attr(data-label); display:block; font-size:var(--text-1); font-weight:700; color:var(--color-accent); }
+}
 /* ===== 약관·개인정보 ===== */
 .legal__head{ background:var(--color-surface); border-bottom:var(--border) solid var(--color-line); padding-block:var(--space-5) var(--space-6); padding-inline:var(--gutter-l) var(--gutter-r); }
 .legal__head-inner{ max-width:var(--container); margin-inline:auto; display:grid; gap:var(--space-3); }
