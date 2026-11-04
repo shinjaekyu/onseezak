@@ -1370,6 +1370,15 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 .promo__link:hover .promo__txt, .promo__link:focus-visible .promo__txt{ animation-play-state:paused; }
 @media (prefers-reduced-motion:reduce){ .promo__txt{ animation:none !important; } }
 .promo--rotate .promo__vp{ flex:1 1 auto; max-width:calc(var(--measure) - var(--space-8)); }
+/* 이벤트 사은품 제품 칸 */
+.nw-gift{ margin:var(--space-3) 0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--space-3); }
+.nw-gift li{ display:grid; gap:var(--space-2); align-content:start; }
+.nw-gift figure{ margin:0; display:grid; gap:var(--space-2); }
+.nw-gift img{ display:block; width:100%; height:auto; background:var(--color-surface); border-radius:var(--radius-md); }
+.nw-gift figcaption{ display:grid; gap:0; font-size:var(--text-2); }
+.nw-gift figcaption span{ color:var(--color-muted); font-size:var(--text-1); }
+.nw-gift__link{ font-size:var(--text-1); font-weight:600; color:var(--color-brand); word-break:keep-all; }
+.nw-gift__note{ font-size:var(--text-1); color:var(--color-muted); }
 /* ============================================================
    외국인용 안내 페이지 (/en/) — 토큰만 사용
    ============================================================ */
