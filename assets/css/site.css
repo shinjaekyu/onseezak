@@ -1177,6 +1177,8 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
   .art__table--cmp td{ padding:var(--space-1) 0; border:0; }
   .art__table--cmp td[data-label]::before{ content:attr(data-label); display:block; font-size:var(--text-1); font-weight:700; color:var(--color-accent); }
 }
+.art__table.art__table--2col{ min-width:0; }
+.art__table--2col tbody th{ width:28%; white-space:normal; }
 /* ===== 약관·개인정보 ===== */
 .legal__head{ background:var(--color-surface); border-bottom:var(--border) solid var(--color-line); padding-block:var(--space-5) var(--space-6); padding-inline:var(--gutter-l) var(--gutter-r); }
 .legal__head-inner{ max-width:var(--container); margin-inline:auto; display:grid; gap:var(--space-3); }
