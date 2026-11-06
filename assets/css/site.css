@@ -207,6 +207,11 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
   .rvlink__eyebrow, .rvlink__title, .rvlink__text, .rvlink__note{ grid-column:1; }
   .rvlink__btn{ grid-column:2; grid-row:1 / span 4; margin:0; }
 }
+/* 한 줄 안내 (상자 없는 페이지) */
+.safety-line{ box-sizing:border-box; max-width:var(--container); margin:var(--space-3) auto; padding:var(--space-2) var(--space-3); border-left:var(--space-1) solid var(--color-text); font-size:var(--text-2); color:var(--color-muted); line-height:1.6; word-break:keep-all; }
+.safety-line b{ color:var(--color-text); font-weight:700; }
+.safety-line a{ color:var(--color-accent); font-weight:600; white-space:nowrap; }
+.pinfo .safety-line, .pinfo__buy ~ .safety-line{ margin:var(--space-3) 0 0; max-width:none; }
 /* 홈 하단 인스타그램 칸 (토큰만 사용) */
 .insta{ padding-block:var(--space-7); padding-inline:var(--gutter-l) var(--gutter-r); background:var(--color-bg); }
 .insta__inner{ max-width:var(--container); margin:0 auto; display:grid; gap:var(--space-5); }
