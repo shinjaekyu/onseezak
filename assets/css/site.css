@@ -22,8 +22,8 @@
   --gutter-r-lg:max(var(--space-4),env(safe-area-inset-right,0px));
   color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--color-brand:#D9D2C9;--color-accent:#E95393;--color-bg:#1C1A18;--color-surface:#262320;--color-text:#F4F2EF;--color-muted:#A39C94;color-scheme:dark;}}
-:root[data-theme="dark"]{--color-brand:#D9D2C9;--color-accent:#E95393;--color-bg:#1C1A18;--color-surface:#262320;--color-text:#F4F2EF;--color-muted:#A39C94;color-scheme:dark;}
+/* 2026-11-08 대표 결정(A안): 다크 모드 자동 반영 끔 — 사이트는 항상 밝은 배경 */
+/* 2026-11-08 대표 결정(A안): 다크 모드 자동 반영 끔 — 사이트는 항상 밝은 배경 */
 html{scroll-behavior:smooth}
 body{background:var(--color-bg);color:var(--color-text);font-family:var(--font-sans);font-size:var(--text-3);line-height:var(--leading-body);margin:0;}
 h1,h2,h3{text-wrap:balance;margin-top:0}
@@ -166,9 +166,6 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 @media (min-width:900px){ .mbar{ display:none; } body{ padding-bottom:0; } }
 .footer__mark{ display:block; height:40px; width:auto; }
 @media (min-width:900px){ .footer__mark{ height:48px; } }
-/* 로고 원본이 흰 배경 JPEG라 다크 모드에서는 흰 배지 위에 표시 */
-@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .footer__mark{ background:#FFFFFF; padding:var(--space-1) var(--space-2); border-radius:var(--radius-sm); height:48px; } }
-:root[data-theme="dark"] .footer__mark{ background:#FFFFFF; padding:var(--space-1) var(--space-2); border-radius:var(--radius-sm); height:48px; }
 /* ===== 404 ===== */
 .nf{ background:var(--color-bg); padding-block:var(--space-8); padding-inline:var(--gutter-l) var(--gutter-r); min-height:60vh; display:grid; place-items:center; }
 .nf__inner{ max-width:var(--measure); display:grid; gap:var(--space-4); text-align:center; word-break:keep-all; }
