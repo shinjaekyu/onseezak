@@ -1098,6 +1098,9 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 .ab-edit__list dt{ font-weight:700; color:var(--color-accent); font-size:var(--text-2); }
 .ab-edit__list dd{ margin:0; line-height:1.75; word-break:keep-all; }
 @media (min-width:900px){ .ab-edit__list{ grid-template-columns:1fr 1fr; } }
+.ab-make__item--wide{ grid-column:1 / -1; }
+.ab-make__item--wide img{ aspect-ratio:16/10; }
+@media (min-width:900px){ .ab-make__item--wide img{ aspect-ratio:2/1; object-position:center 55%; } }
 /* ===== COMPRESSION GUIDE 허브 ===== */
 .ghub-head{ background:var(--color-surface); border-bottom:var(--border) solid var(--color-line); padding-block:var(--space-5) var(--space-6); padding-inline:var(--gutter-l) var(--gutter-r); }
 .ghub-head__inner{ max-width:var(--container); margin-inline:auto; display:grid; gap:var(--space-4); }
