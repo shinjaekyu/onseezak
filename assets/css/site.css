@@ -1191,6 +1191,14 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 }
 .art__table.art__table--2col{ min-width:0; }
 .art__table--2col tbody th{ width:28%; white-space:normal; }
+
+/* 부위별 찾기 (2026-11-11) */
+.ghub-area{ display:grid; gap:var(--space-2); }
+.ghub-area__title{ margin:0; font-size:var(--text-2); font-weight:700; color:var(--color-text); }
+.ghub-area__list{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:var(--space-2); }
+.ghub-area__chip{ display:inline-flex; align-items:center; text-decoration:none; }
+.ghub-area__chip:hover{ border-color:var(--color-brand); color:var(--color-brand); }
+.ghub-area__all{ border-color:var(--color-brand); color:var(--color-brand); }
 /* ===== 약관·개인정보 ===== */
 .legal__head{ background:var(--color-surface); border-bottom:var(--border) solid var(--color-line); padding-block:var(--space-5) var(--space-6); padding-inline:var(--gutter-l) var(--gutter-r); }
 .legal__head-inner{ max-width:var(--container); margin-inline:auto; display:grid; gap:var(--space-3); }
