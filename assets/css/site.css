@@ -621,6 +621,7 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 @media (min-width:900px){ .rf__grid{ grid-template-columns:repeat(3,1fr); } }
 .rf__item--tall video{ aspect-ratio:3 / 5; object-fit:contain; background:var(--color-surface); }
 /* 세트 사진은 원본 1:1 비율 그대로 (2026-10-20) */
+.gal__main img[src*="real-worn-abdomen"], .gal__thumb img[src*="real-worn-abdomen"]{ aspect-ratio:4/3; object-fit:contain; object-position:50% 50%; }
 .gal__main img[src*="set-85-74-sq"], .gal__main img[src*="set-04-72-sq"], .gal__thumb img[src*="set-85-74-sq"], .gal__thumb img[src*="set-04-72-sq"]{ aspect-ratio:1; object-fit:contain; object-position:50% 50%; }
 /* 제품 보강 블록: 고르는 기준·확인할 점·관련 질문 (토큰만 사용) */
 .pick h3{ margin:var(--space-3) 0 0; font-size:var(--text-3); }
