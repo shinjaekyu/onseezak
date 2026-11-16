@@ -1503,6 +1503,7 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
   .hero__trust li{ justify-content:center; text-align:center; padding:var(--space-3) var(--space-1); font-size:var(--text-1); line-height:1.4; }
   .hero__trust li + li{ border-left:var(--border) solid var(--color-line); }
   .hero__trust li::before{ display:none; }
+  .hero__trust li:nth-child(4){ grid-column:1 / -1; border-left:0; border-top:var(--border) solid var(--color-line); padding-block:var(--space-2); }
 
   /* 단계·제품: 옆으로 넘기는 카드 */
   .timeline, .products, .store, .guide{ padding-block:var(--space-6); }
