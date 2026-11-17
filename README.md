@@ -6,6 +6,7 @@
 
 ## 파일
 - `faq_add.py` — FAQ 문항 추가. 번호, 문항 수, 목록, 검색엔진용 데이터, 날짜를 한 번에 고칩니다.
+- `guide_add.py` — 부위별 가이드 글 추가. 글 내용을 JSON 파일로 주면 페이지를 만들고 목록·모음·sitemap·llms.txt·rss.xml을 함께 고칩니다. `upper-body.json`이 예시입니다.
 - `qa.js` — 배포 전 점검(320·375·1280px 넘침, H1 1개, JSON-LD).
 
 ## 작업 순서
