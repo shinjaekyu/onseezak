@@ -7,6 +7,7 @@
 ## 파일
 - `faq_add.py` — FAQ 문항 추가. 번호, 문항 수, 목록, 검색엔진용 데이터, 날짜를 한 번에 고칩니다.
 - `guide_add.py` — 부위별 가이드 글 추가. 글 내용을 JSON 파일로 주면 페이지를 만들고 목록·모음·sitemap·llms.txt·rss.xml을 함께 고칩니다. `upper-body.json`이 예시입니다.
+- `photo_bg.py` — 모델 사진의 배경만 공홈 스튜디오 색(#F4F2F0)으로 바꾸고 3:4(900x1200)로 맞춥니다. 인물과 제품은 건드리지 않습니다. `python3 photo_bg.py 원본.png 결과.webp`
 - `qa.js` — 배포 전 점검(320·375·1280px 넘침, H1 1개, JSON-LD).
 
 ## 작업 순서
