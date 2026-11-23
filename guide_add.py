@@ -86,6 +86,7 @@ def main():
     body = sub(r'(<div class="faqmini">).*?(<a class="btn btn--secondary btn--sm" href="/faq/")', '<div class="faqmini">' + ''.join(mini) + '<a class="btn btn--secondary btn--sm" href="/faq/"', body)
     body = sub(r'<section class="refs".*?</section>', refs, body)
     body = sub(r'(<ul class="rel__grid">).*?(</ul>)', f'<ul class="rel__grid">{rel}</ul>', body)
+    if A.get('category'): body = body.replace('COMPRESSION GUIDE</a></li><li>부위별</li></ol>', f'COMPRESSION GUIDE</a></li><li>{A["category"]}</li></ol>')
     out = head + body
     for j in re.findall(r'<script type="application/ld\+json">(.*?)</script>', out, re.S): json.loads(j)
     os.makedirs(f'guide/{slug}', exist_ok=True); open(f'guide/{slug}/index.html', 'w', encoding='utf-8').write(out)
