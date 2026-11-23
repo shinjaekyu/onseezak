@@ -335,6 +335,8 @@ body{ padding-bottom:calc(var(--control-h) + env(safe-area-inset-bottom,0px)); }
 .pcard__link:hover .pcard__img{ transform:scale(1.03); }
 .pcard__badge{ position:absolute; bottom:var(--space-3); left:var(--space-3); }
 .pcard__part{ margin:var(--space-3) 0 var(--space-1); font-size:var(--text-1); font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent); }
+.price-note{ display:block; margin-top:var(--space-1); font-size:var(--text-1); font-weight:400; color:var(--color-muted); }
+.pcard__price, .dcard__price{ margin:var(--space-1) 0 0; font-size:var(--text-2); font-weight:700; color:var(--color-text); }
 .pcard__name{ margin:var(--space-3) 0 var(--space-1); word-break:keep-all; font-size:var(--text-3); font-weight:700; line-height:var(--leading-tight); }
 .pcard__desc{ margin:0; font-size:var(--text-2); color:var(--color-muted); }
 @media (min-width:700px){ .products__grid{ grid-template-columns:repeat(4,1fr); gap:var(--space-4); } }
