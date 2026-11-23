@@ -76,7 +76,7 @@ def main():
     head_end = s.find('</head>'); head, body = s[:head_end], s[head_end:]
     head = head.replace(escq(old_title), escq(title)).replace(old_title, escq(title)).replace(old_desc, escq(desc)).replace(old_img, img)
     # body
-    body = sub(r'<p class="art__eyebrow">.*?</p>', f'<p class="art__eyebrow">부위별 · 읽는 시간 {A["read"]}</p>', body)
+    body = sub(r'<p class="art__eyebrow">.*?</p>', f'<p class="art__eyebrow">{A.get("category","부위별")} · 읽는 시간 {A["read"]}</p>', body)
     body = sub(r'<h1 class="art__title">.*?</h1>', f'<h1 class="art__title">{esc(title)}</h1>', body)
     body = sub(r'(<p class="art__summary-label">3줄 요약</p><ul>).*?(</ul>)', f'<p class="art__summary-label">3줄 요약</p><ul>{summ}</ul>', body)
     body = sub(r'최신 수정 \d{4}-\d{2}-\d{2} · 글쓴이', f'최신 수정 {D} · 글쓴이', body)
@@ -91,13 +91,14 @@ def main():
     os.makedirs(f'guide/{slug}', exist_ok=True); open(f'guide/{slug}/index.html', 'w', encoding='utf-8').write(out)
     # 목록·모음
     card = lambda thumb: (f'<li><a class="ghub__card" href="/guide/{slug}/"><div class="ghub__thumb"><img src="{img}" alt="" width="900" height="1200" loading="lazy"></div>'
-            f'<div class="ghub__body"><p class="ghub__meta">{A["area"]} · {A["read"]}</p><h2 class="ghub__title">{esc(title)}</h2><p class="ghub__desc">{esc(A["summary"][0])}</p><span class="ghub__more">읽기 →</span></div></a></li>')
-    for p in ('guide/index.html', 'guide/area/index.html'):
+            f'<div class="ghub__body"><p class="ghub__meta">{A.get("category") or A["area"]} · {A["read"]}</p><h2 class="ghub__title">{esc(title)}</h2><p class="ghub__desc">{esc(A["summary"][0])}</p><span class="ghub__more">읽기 →</span></div></a></li>')
+    CAT = A.get('category'); AFTER = A.get('after', T_SLUG)
+    for p in (('guide/index.html',) if CAT else ('guide/index.html', 'guide/area/index.html')):
         t = open(p, encoding='utf-8').read()
-        k = t.find(f'<a class="ghub__card" href="/guide/{T_SLUG}/">'); assert k > 0, p
+        k = t.find(f'<a class="ghub__card" href="/guide/{AFTER}/">'); assert k > 0, p
         e = t.find('</a></li>', k) + len('</a></li>'); t = t[:e] + card(img) + t[e:]
         chip = f'<li><a class="chip ghub-area__chip" href="/guide/{T_SLUG}/">전신</a></li>'
-        t = t.replace(chip, chip + f'<li><a class="chip ghub-area__chip" href="/guide/{slug}/">{A["area"]}</a></li>')
+        if not CAT: t = t.replace(chip, chip + f'<li><a class="chip ghub-area__chip" href="/guide/{slug}/">{A["area"]}</a></li>')
         t = re.sub(r'(ghub__updated">최신 수정 )\d{4}-\d{2}-\d{2}', rf'\g<1>{D}', t)
         mm = re.search(r'<script type="application/ld\+json">(.*?)</script>', t, re.S)
         if mm:
@@ -110,7 +111,7 @@ def main():
     t = open('sitemap.xml', encoding='utf-8').read()
     line = re.search(rf'<url><loc>https://onseezak\.com/guide/{T_SLUG}/</loc>.*?</url>\n?', t).group(0)
     t = t.replace(line, line + line.replace(T_SLUG, slug).replace(re.search(r'<lastmod>(.*?)</lastmod>', line).group(1), D))
-    for u in ('guide/', 'guide/area/'):
+    for u in (('guide/',) if CAT else ('guide/', 'guide/area/')):
         t = re.sub(rf'(<loc>https://onseezak\.com/{u}</loc><lastmod>)\d{{4}}-\d{{2}}-\d{{2}}', rf'\g<1>{D}', t)
     open('sitemap.xml', 'w', encoding='utf-8').write(t)
     t = open('llms.txt', encoding='utf-8').read()
