@@ -1642,3 +1642,6 @@ html[lang="ja"] body{ word-break:keep-all; overflow-wrap:anywhere; }
   .xg-rules__col{ padding:var(--space-5); }
   .xg-end{ margin-top:var(--space-8); padding-block:var(--space-8); }
 }
+/* 띠 배너 여러 줄 순환(2026-11-28): 항목마다 data-start/data-end, 보이는 한 줄만 노출 */
+.promo--multi .promo__link[hidden]{ display:none; }
+.promo--multi .promo__item{ overflow:hidden; text-overflow:ellipsis; }
